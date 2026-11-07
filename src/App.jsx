@@ -3,6 +3,7 @@ import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import { projects } from "./data/projects.js";
 import ProjectCard from "./components/ProjectCard.jsx";
 import SideBar from "./components/SideBar.jsx";
+import { Polaroid } from "./components/polaroid.jsx";
 import { useHorizontalScroll } from "./components/useHorizontalScroll.js";
 import Bakery from "./assets/portfolio/Bakery.jpg";
 import Sky from "./assets/portfolio/sky.jpg";
@@ -61,15 +62,6 @@ function Panel({ id, image, className = "", children, activeSection, onNavigate 
       {children}
       <PanelNav activeSection={activeSection} onNavigate={onNavigate} />
     </section>
-  );
-}
-
-function Polaroid({ image, title, alt, className = "" }) {
-  return (
-    <figure className={`polaroid ${className}`}>
-      <img src={image} alt={alt} />
-      <figcaption>{title}</figcaption>
-    </figure>
   );
 }
 
@@ -158,8 +150,8 @@ export default function App() {
                 A little more about me <FiArrowRight aria-hidden="true" />
               </a>
             </div>
-            <Polaroid image={Me} alt="Areeb standing outdoors in a suit" title="Areeb · Z7X4Y2HQ" className="home-portrait" />
-            <Polaroid image={Laptop} alt="A laptop playing music" title="A place to get started" className="home-laptop" />
+            <Polaroid image={Me} alt="Areeb standing outdoors in a suit" Title="Areeb · Z7X4Y2HQ" className="home-portrait" float="right" delay="0.5s" />
+            <Polaroid image={Laptop} alt="A laptop playing music" Title="A place to get started" className="home-laptop" float="left" delay="0.7s" />
           </div>
           <p className="scroll-hint">SCROLL SIDEWAYS <span aria-hidden="true">→</span></p>
         </Panel>
@@ -220,7 +212,7 @@ export default function App() {
               <p className="section-lede">I got curious about making games too. Unity and C# are the tools at the start of that path.</p>
               <div className="game-tools"><span>Unity</span><span>C#</span></div>
             </div>
-            <Polaroid image={Stadia} alt="A Stadia controller on a desk" title="Stadia controller" className="game-photo" />
+            <Polaroid image={Stadia} alt="A Stadia controller on a desk" Title="Stadia controller" className="game-photo" float="right" delay="0.4s" />
           </div>
         </Panel>
 
@@ -230,9 +222,9 @@ export default function App() {
             <h2 className="section-title" id="photos-title">Little things I <span className="accentable">noticed.</span></h2>
             <p className="section-lede">A small collection of photos from the original page.</p>
             <div className="photo-grid">
-              <Polaroid image={Moon} alt="A crescent moon in a violet evening sky framed by trees" title="Purple sky" className="photo-card moon-photo" />
-              <Polaroid image={Stadia} alt="A Stadia controller on a desk" title="Stadia controller" className="photo-card stadia-photo" />
-              <Polaroid image={Laptop} alt="A laptop showing a music player" title="T460" className="photo-card laptop-photo" />
+              <Polaroid image={Moon} alt="A crescent moon in a violet evening sky framed by trees" Title="Purple sky" className="photo-card moon-photo" float="left" delay="0.35s" />
+              <Polaroid image={Stadia} alt="A Stadia controller on a desk" Title="Stadia controller" className="photo-card stadia-photo" float="left" delay="0.5s" />
+              <Polaroid image={Laptop} alt="A laptop showing a music player" Title="T460" className="photo-card laptop-photo" float="right" delay="0.65s" />
             </div>
           </div>
         </Panel>
@@ -247,7 +239,7 @@ export default function App() {
               <p className="writing-note">No title on this page yet. Just the milestone that made it here.</p>
               <a className="text-link" href="https://github.com/Z7X4Y2HQ" target="_blank" rel="noopener noreferrer">Find me on GitHub <FiArrowUpRight aria-hidden="true" /></a>
             </div>
-            <Polaroid image={Moon} alt="A crescent moon in a violet evening sky" title="A quiet evening" className="writing-photo" />
+            <Polaroid image={Moon} alt="A crescent moon in a violet evening sky" Title="A quiet evening" className="writing-photo" float="left" delay="0.4s" />
           </div>
         </Panel>
 

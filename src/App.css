@@ -142,16 +142,13 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--paper-light); o
 .text-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 9px; color: var(--paper-light); font-size: 13px; font-weight: 700; text-decoration: underline; text-decoration-color: rgb(255 244 226 / 49%); text-underline-offset: 5px; }
 .text-link svg { width: 15px; height: 15px; transition: transform .18s ease; }
 .text-link:hover svg { transform: translateX(4px); }
-.polaroid { position: relative; margin: 0; padding: 11px 11px 0; background: #f8ecd8; border: 1px solid rgb(96 78 57 / 13%); box-shadow: 0 15px 38px rgb(37 29 21 / 28%), 0 1px 2px rgb(37 29 21 / 17%); color: var(--ink); transition: transform .25s var(--ease), box-shadow .25s ease; }
+.polaroid { position: relative; color: var(--ink); box-shadow: 0 15px 38px rgb(37 29 21 / 28%), 0 1px 2px rgb(37 29 21 / 17%); }
 .polaroid:hover { z-index: 3; transform: translateY(-5px) rotate(0deg); box-shadow: 0 21px 44px rgb(37 29 21 / 34%); }
-.polaroid img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.polaroid figcaption { display: grid; min-height: 48px; place-items: center; color: #554c40; font-size: 12px; letter-spacing: .02em; }
-.home-portrait { position: absolute; top: 15%; right: 8%; width: clamp(230px, 24vw, 340px); height: 70%; max-height: 530px; padding: 12px 12px 0; transform: rotate(3deg); }
-.home-portrait img { object-position: 53% 36%; }
-.home-portrait figcaption { min-height: 53px; font-size: 14px; }
-.home-laptop { position: absolute; right: 38%; bottom: 10%; width: clamp(155px, 17vw, 235px); height: 25%; max-height: 190px; transform: rotate(-7deg); }
-.home-laptop img { object-position: 50% 51%; }
-.home-laptop figcaption { min-height: 32px; font-size: 10px; }
+.polaroid-image { position: relative; overflow: hidden; }
+.polaroid-title { color: #554c40; letter-spacing: .02em; }
+.polaroid-overlay-title { position: relative; z-index: 1; }
+.home-portrait { --polaroid-width: 100%; --polaroid-height: clamp(300px, 44vh, 470px); --polaroid-hover-height: clamp(320px, 47vh, 495px); --polaroid-title-size: clamp(12px, 1.34vw, 17px); --polaroid-overlay-size: clamp(12px, 1.34vw, 17px); position: absolute; top: 15%; right: 8%; width: clamp(230px, 24vw, 340px); margin: 0 !important; transform: rotate(3deg); }
+.home-laptop { --polaroid-width: 100%; --polaroid-height: clamp(112px, 20vh, 175px); --polaroid-hover-height: clamp(130px, 23vh, 190px); --polaroid-title-size: clamp(10px, 1vw, 13px); position: absolute; right: 38%; bottom: 10%; width: clamp(155px, 17vw, 235px); margin: 0 !important; transform: rotate(-7deg); }
 .scroll-hint, .panel-count { position: absolute; z-index: 2; bottom: 23px; margin: 0; color: rgb(255 244 226 / 70%); font-size: 9px; font-weight: 700; letter-spacing: .15em; }
 .scroll-hint { left: clamp(105px, 13vw, 205px); }
 .scroll-hint span { display: inline-block; margin-left: 7px; font-size: 13px; }
@@ -196,17 +193,13 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--paper-light); o
 .game-copy { max-width: 610px; }
 .game-tools { display: flex; gap: 12px; margin-top: 29px; }
 .game-tools span { display: grid; min-width: 88px; min-height: 52px; place-items: center; padding: 0 15px; border: 1px solid rgb(255 235 205 / 56%); border-radius: 3px; background: rgb(255 235 205 / 91%); box-shadow: 0 7px 20px rgb(28 25 25 / 25%); color: var(--ink); font-size: 14px; font-weight: 700; }
-.game-photo { width: clamp(220px, 29vw, 380px); height: min(52vh, 410px); flex: 0 0 auto; transform: rotate(4deg); }
-.game-photo img { object-position: center; }
-.game-photo figcaption { min-height: 48px; }
+.game-photo { --polaroid-width: 100%; --polaroid-height: min(45vh, 360px); --polaroid-hover-height: min(48vh, 385px); --polaroid-title-size: clamp(12px, 1.34vw, 17px); --polaroid-overlay-size: clamp(12px, 1.34vw, 17px); width: clamp(220px, 29vw, 380px); flex: 0 0 auto; margin: 0 !important; transform: rotate(4deg); }
 
 /* Personal photos sit in loose paper frames like the old site. */
 .photo-gallery-panel .panel-shade { background: linear-gradient(100deg, rgb(53 47 46 / 81%), rgb(58 50 50 / 61%) 65%, rgb(45 42 43 / 57%)); }
 .gallery-inner .section-title { max-width: 760px; }
 .photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; gap: clamp(18px, 3vw, 42px); margin-top: clamp(24px, 4vh, 40px); }
-.photo-card { min-width: 0; width: 100%; padding: 11px 11px 0; }
-.photo-card img { height: clamp(170px, 30vh, 310px); }
-.photo-card figcaption { min-height: 47px; font-size: 12px; }
+.photo-card { --polaroid-width: 100%; --polaroid-height: clamp(170px, 30vh, 310px); --polaroid-hover-height: clamp(185px, 33vh, 330px); --polaroid-title-size: clamp(11px, 1vw, 14px); --polaroid-overlay-size: clamp(11px, 1vw, 14px); --polaroid-caption-margin: 7px 0; --polaroid-overlay-padding: 5px 8px; min-width: 0; width: 100%; margin: 0 !important; }
 .moon-photo { transform: rotate(-2deg) translateY(10px); }
 .stadia-photo { transform: rotate(1.5deg) translateY(-8px); }
 .laptop-photo { transform: rotate(-1deg) translateY(5px); }
@@ -223,7 +216,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--paper-light); o
 .writing-rule { width: 65px; height: 2px; margin: 27px 0 18px; background: #a48e6d; }
 .writing-note { max-width: 420px; margin: 0; color: #756a5c; font-size: 12px; line-height: 1.5; }
 .writing-sheet .text-link { color: #4c4236; text-decoration-color: #a48e6d; }
-.writing-photo { width: clamp(190px, 23vw, 300px); height: min(44vh, 340px); flex: 0 0 auto; transform: rotate(-4deg); }
+.writing-photo { --polaroid-width: 100%; --polaroid-height: min(38vh, 300px); --polaroid-hover-height: min(41vh, 320px); --polaroid-title-size: clamp(11px, 1.15vw, 15px); --polaroid-overlay-size: clamp(11px, 1.15vw, 15px); width: clamp(190px, 23vw, 300px); flex: 0 0 auto; margin: 0 !important; transform: rotate(-4deg); }
 
 /* Project cards are paper prints, keeping the live links clear and simple. */
 .projects-panel .panel-shade { background: linear-gradient(100deg, rgb(54 47 39 / 84%), rgb(59 50 41 / 66%) 68%, rgb(49 46 40 / 59%)); }
@@ -263,6 +256,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--paper-light); o
 @keyframes rail-in { from { opacity: 0; transform: translate(-18px, -50%); } to { opacity: 1; transform: translate(0, -50%); } }
 @keyframes copy-in { from { opacity: 0; translate: 0 18px; } to { opacity: 1; translate: 0 0; } }
 @keyframes greeting-in { from { opacity: 0; translate: 0 5px; } to { opacity: 1; translate: 0 0; } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 .home-copy > * { animation: copy-in .8s var(--ease) both; }
 .home-copy > :nth-child(1) { animation-delay: .15s; }
 .home-copy > :nth-child(2) { animation-delay: .28s; }
@@ -294,10 +288,10 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--paper-light); o
   .panel::-webkit-scrollbar { display: none; }
   .panel-inner { height: auto; min-height: 100svh; padding-top: 55px; padding-bottom: 58px; }
   .home-layout { height: auto; min-height: 100svh; padding-top: 32px; padding-bottom: 55px; }
-  .home-portrait { top: 13%; height: 66%; }
+  .home-portrait { top: 13%; }
   .home-laptop { bottom: 8%; }
   .timeline-card { min-height: 190px; }
-  .photo-card img { height: 27vh; }
+  .photo-card { --polaroid-height: 27vh; --polaroid-hover-height: 30vh; }
 }
 
 @media (max-width: 760px) {
@@ -334,8 +328,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--paper-light); o
   .story-copy p { margin-bottom: 10px; }
   .teacher-quote { margin: 12px 0; padding-left: 12px; font-size: 15px; }
   .text-link { font-size: 12px; }
-  .home-portrait { position: relative; top: auto; right: auto; width: min(205px, 57vw); height: 270px; margin: 24px 12px 0 auto; padding: 9px 9px 0; transform: rotate(2deg); }
-  .home-portrait figcaption { min-height: 39px; font-size: 12px; }
+  .home-portrait { --polaroid-height: 238px; --polaroid-hover-height: 255px; --polaroid-title-size: 12px; --polaroid-overlay-size: 12px; --polaroid-caption-margin: 5px 0; --polaroid-overlay-padding: 6px 8px; position: relative; top: auto; right: auto; width: min(205px, 57vw); margin: 24px 12px 0 auto !important; transform: rotate(2deg); }
   .home-laptop { display: none; }
   .scroll-hint { left: 22px; bottom: 17px; font-size: 8px; }
   .panel-nav { display: none; }
@@ -355,23 +348,20 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--paper-light); o
   .game-copy { width: 100%; }
   .game-tools { margin-top: 20px; }
   .game-tools span { min-width: 75px; min-height: 44px; font-size: 13px; }
-  .game-photo { width: min(240px, 70vw); height: 270px; margin-left: auto; }
-  .game-photo figcaption { min-height: 41px; }
+  .game-photo { --polaroid-height: 225px; --polaroid-hover-height: 245px; --polaroid-title-size: 12px; --polaroid-overlay-size: 12px; --polaroid-caption-margin: 5px 0; width: min(240px, 70vw); margin: 0 0 0 auto !important; }
   .photo-gallery-panel .panel-shade { background: linear-gradient(180deg, rgb(53 47 46 / 81%), rgb(58 50 50 / 71%)); }
   .gallery-inner { justify-content: flex-start; }
   .photo-grid { grid-template-columns: 1fr 1fr; align-items: start; gap: 15px; margin-top: 23px; }
-  .photo-card { padding: 8px 8px 0; }
-  .photo-card img { height: clamp(150px, 28vh, 230px); }
-  .photo-card figcaption { min-height: 37px; font-size: 10px; }
+  .photo-card { --polaroid-height: clamp(150px, 28vh, 230px); --polaroid-hover-height: clamp(165px, 30vh, 245px); --polaroid-title-size: 10px; --polaroid-overlay-size: 10px; --polaroid-caption-margin: 5px 0; --polaroid-overlay-padding: 5px 7px; }
   .stadia-photo { transform: rotate(1.5deg) translateY(10px); }
   .laptop-photo { grid-column: 1 / -1; width: min(68%, 300px); justify-self: center; transform: rotate(-1deg); }
-  .laptop-photo img { height: clamp(155px, 28vh, 220px); }
+  .laptop-photo { --polaroid-height: clamp(155px, 28vh, 220px); --polaroid-hover-height: clamp(170px, 30vh, 235px); }
   .writing-inner { align-items: center; flex-direction: column; justify-content: center; gap: 24px; }
   .writing-sheet { width: 100%; padding: 23px; }
   .writing-sheet .section-title { font-size: clamp(35px, 9vw, 53px); }
   .writing-sheet .section-lede { font-size: 14px; }
   .writing-rule { margin: 20px 0 14px; }
-  .writing-photo { width: min(200px, 58vw); height: 245px; align-self: flex-end; }
+  .writing-photo { --polaroid-height: 210px; --polaroid-hover-height: 230px; --polaroid-title-size: 11px; --polaroid-overlay-size: 11px; width: min(200px, 58vw); align-self: flex-end; }
   .projects-inner { justify-content: flex-start; padding-top: 101px; }
   .projects-header { display: block; margin-bottom: 20px; }
   .projects-header .section-title { font-size: clamp(41px, 10vw, 60px); }
@@ -402,7 +392,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--paper-light); o
   .display-title { font-size: clamp(41px, 11.8vw, 55px); }
   .story-copy { font-size: 13px; }
   .photo-grid { gap: 10px; }
-  .photo-card img { height: 150px; }
+  .photo-card { --polaroid-height: 150px; --polaroid-hover-height: 165px; }
   .project-card { grid-template-columns: 29% 1fr; gap: 7px; }
   .project-art { min-height: 142px; }
   .project-meta { display: grid; grid-template-columns: 1fr; }
