@@ -9,9 +9,14 @@ export default function ProjectCard({ project }) {
         <span className="project-orbit orbit-two" />
       </div>
       <div className="project-copy">
+        <div className="project-meta">
+          <span>{project.group}</span>
+          <span className="project-kind"><i />{project.kind}</span>
+        </div>
         <h3 className="project-title accentable">{project.name}</h3>
-        <a className="project-link" href={project.href} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.name}`}>
-          <FiArrowUpRight aria-hidden="true" />
+        <p>{project.summary}</p>
+        <a className="project-link" href={project.href} target="_blank" rel="noopener noreferrer">
+          {project.action}<FiArrowUpRight aria-hidden="true" />
         </a>
       </div>
     </article>

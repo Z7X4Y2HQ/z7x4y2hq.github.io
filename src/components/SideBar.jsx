@@ -4,9 +4,9 @@ import { LuGamepad2 } from "react-icons/lu";
 
 const sections = [
   { id: "home", label: "Home", icon: FiHome },
-  { id: "story", label: "2019", icon: FiUser },
+  { id: "story", label: "Story", icon: FiUser },
   { id: "web", label: "Web", icon: FiCode },
-  { id: "games", label: "Game", icon: LuGamepad2 },
+  { id: "games", label: "Games", icon: LuGamepad2 },
   { id: "photos", label: "Photography", icon: FiCamera },
   { id: "writing", label: "Writing", icon: FiBookOpen },
   { id: "projects", label: "Projects", icon: FiGrid },
