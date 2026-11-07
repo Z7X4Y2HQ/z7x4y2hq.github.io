@@ -146,7 +146,7 @@ export default function App() {
           <div className="home-layout">
             <div className="home-copy">
               <Eyebrow number="01">A LITTLE INTRODUCTION</Eyebrow>
-              <p className="greeting" aria-live="polite">{greetings[greetingIndex]}.</p>
+              <p className="greeting" aria-live="off">{greetings[greetingIndex]}.</p>
               <h1 className="display-title" id="home-title">How do I<br /><span className="accentable">introduce myself?</span></h1>
               <div className="story-copy">
                 <p><span className="underlined-note">Z7X4Y2HQ, cracking his knuckles while staring at an empty canvas of pages.</span> “How to start talking about myself?” A question he often asked when interviewed.</p>
@@ -169,6 +169,7 @@ export default function App() {
             <Eyebrow number="02">THE ROAD SO FAR</Eyebrow>
             <h2 className="section-title" id="story-title">A few years that <span className="accentable">changed the page.</span></h2>
             <p className="section-lede">College ended, a university began, the world stayed home for a while, and several new interests took root.</p>
+            <p className="interview-note">The interview began with a 12-second silence. I introduced myself, then heard: “Don't just introduce yourself, talk about yourself.” I wondered whether to mention my interests or experience; my voice cracked. The interviewer told me it wasn't a hard interview, and we started again with questions from my CV.</p>
             <div className="timeline-grid">
               <article className="timeline-card">
                 <span className="timeline-year">2019</span>

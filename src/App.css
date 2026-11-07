@@ -169,6 +169,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--paper-light); o
 .story-inner { justify-content: center; }
 .story-inner .section-title { max-width: 850px; }
 .story-inner .section-lede { margin-top: 13px; }
+.interview-note { max-width: 880px; margin: 13px 0 0; padding-left: 13px; border-left: 2px solid var(--paper); color: rgb(255 244 226 / 85%); font-size: clamp(12px, 1vw, 14px); line-height: 1.55; }
 .timeline-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(10px, 1.3vw, 18px); margin-top: clamp(24px, 4vh, 40px); }
 .timeline-card { min-height: 204px; padding: clamp(16px, 1.7vw, 23px); border: 1px solid rgb(255 244 226 / 39%); border-radius: 2px; background: rgb(255 235 205 / 92%); box-shadow: 0 12px 28px rgb(34 27 25 / 18%); color: var(--ink); }
 .timeline-year { display: block; margin-bottom: 15px; color: #756552; font-size: clamp(27px, 3.2vw, 43px); font-weight: 650; letter-spacing: -.075em; }
@@ -340,6 +341,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--paper-light); o
   .panel-nav { display: none; }
   .panel-count { right: 17px; bottom: 18px; font-size: 8px; }
   .story-inner { justify-content: flex-start; }
+  .interview-note { margin-top: 12px; font-size: 12px; }
   .timeline-grid { grid-template-columns: 1fr; gap: 10px; margin-top: 23px; }
   .timeline-card { min-height: auto; padding: 15px 17px; }
   .timeline-year { margin-bottom: 7px; font-size: 30px; }
