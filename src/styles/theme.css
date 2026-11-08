@@ -137,7 +137,6 @@ button:focus-visible, a:focus-visible { outline: 3px solid #fff4e2; outline-offs
 .display-title { margin: 0; font-size: clamp(62px, 10.3vw, 150px); font-weight: 650; letter-spacing: -.085em; line-height: .82; text-shadow: 0 3px 20px rgb(31 28 25 / 12%); }
 .display-title > span { display: inline-block; margin-top: .11em; }
 .accentable { transition: color .2s ease, background .2s ease, text-decoration-color .2s ease; }
-.has-highlight .accentable { border-radius: .14em; background: var(--paper); box-shadow: .13em 0 var(--paper), -.13em 0 var(--paper); color: var(--ink); }
 .has-underline .accentable { text-decoration: underline; text-decoration-color: var(--paper); text-decoration-thickness: .065em; text-underline-offset: .12em; }
 .home-description { max-width: 390px; margin: 28px 0 0; color: rgb(255 244 226 / 86%); font-size: clamp(15px, 1.25vw, 19px); line-height: 1.65; }
 .browse-button { display: inline-flex; align-items: center; gap: 13px; min-height: 48px; margin-top: 34px; padding: 0 18px; border: 1px solid rgb(255 235 205 / 65%); border-radius: 4px; background: var(--paper); color: var(--ink); cursor: pointer; font-size: 13px; font-weight: 700; box-shadow: 0 7px 20px rgb(38 31 23 / 17%); transition: transform .18s var(--ease), box-shadow .18s ease; }

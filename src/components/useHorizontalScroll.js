@@ -6,7 +6,6 @@ export function useHorizontalScroll(ref) {
     if (!element) return undefined;
 
     const onWheel = (event) => {
-      if (window.matchMedia("(max-width: 760px)").matches) return;
       if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
       if (event.ctrlKey) return;
 
