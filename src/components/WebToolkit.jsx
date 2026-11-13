@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 
-export default function WebToolkit({ groups, children }) {
+export default function WebToolkit({
+  groups,
+  children,
+  title = "WEB · DEVELOPMENT TOOLKIT",
+  ariaLabel = "Web development skills",
+  className = "",
+  captionClassName = "",
+}) {
   const skills = groups.flatMap(({ skills }) => skills);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -26,16 +33,16 @@ export default function WebToolkit({ groups, children }) {
   }, [selectedIndex, paused, skills.length]);
 
   return (
-    <div className="skill-sheet"
+    <div className={`skill-sheet ${className}`.trim()}
       onPointerEnter={(event) => { if (event.pointerType !== "touch") setHovered(true); }}
       onPointerLeave={() => setHovered(false)}
       onFocus={() => setFocused(true)}
       onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false); }}>
       <div className="toolkit-header">
-        <p className="skill-caption">WEB · DEVELOPMENT TOOLKIT</p>
+        <p className={`skill-caption ${captionClassName}`.trim()}>{title}</p>
 
       </div>
-      <ul className="toolkit-names" aria-label="Web development skills">
+      <ul className="toolkit-names" aria-label={ariaLabel}>
         {skills.map((skill, index) => (
           <li key={skill}>
             <button type="button" aria-pressed={activeIndex === index}

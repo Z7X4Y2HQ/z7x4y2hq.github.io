@@ -9,7 +9,7 @@ export const timelineEntries = [
     },
     {
         "year":  2021,
-        "description":  "Was the year my focus moved from my studies to some other important things. Like Anime, and watching Anime and... Oh yeah, I also entered a writing Contest that was held by MyAnimeList x Honeyfeed. Wrote a short novel called Skipped a Beat, around 65,000 words. I probably tried to restart learning Japanese again but failed."
+        "description":  "Was the year my focus moved from my studies to some other important things. Like Anime, and watching Anime and... Oh yeah, I also entered a writing Contest that was held by MyAnimeList x Honeyfeed. Wrote a short novel called Skipped a Beat, around 65,000 words. I probably tried to start learning Japanese again but failed."
     },
     {
         "year":  2022,

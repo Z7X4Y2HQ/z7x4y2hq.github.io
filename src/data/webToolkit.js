@@ -16,8 +16,8 @@ export const webToolkit = [
   {
     label: "Application",
     skills: [
-      "Auth.js", "Clerk", "JWT", "Session Auth",
-      "Vercel", "Code Splitting", "Lazy Loading", "SaaS",
+      "Auth.js", "JWT", "Session Auth",
+      "Vercel", "Lazy Loading", "SaaS",
     ],
   },
 ];
