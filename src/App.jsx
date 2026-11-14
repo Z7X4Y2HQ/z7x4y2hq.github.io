@@ -439,24 +439,7 @@ function PanelNav({ activeSection }) {
 }
 
 function Panel({ id, image, className = "", children, activeSection, onNavigate, onOpenDetail }) {
-  const touchStartRef = useRef(null);
   const canExplore = Boolean(detailTopics[id]);
-
-  const handleTouchStart = (event) => {
-    if (!canExplore || event.touches.length !== 1) return;
-    const touch = event.touches[0];
-    touchStartRef.current = { x: touch.clientX, y: touch.clientY };
-  };
-
-  const handleTouchEnd = (event) => {
-    if (!touchStartRef.current || event.changedTouches.length !== 1) return;
-    const touch = event.changedTouches[0];
-    const deltaX = touch.clientX - touchStartRef.current.x;
-    const deltaY = touch.clientY - touchStartRef.current.y;
-    touchStartRef.current = null;
-
-    if (deltaY < -75 && Math.abs(deltaY) > Math.abs(deltaX) * 1.2) onOpenDetail(id);
-  };
 
   return (
     <section
@@ -464,13 +447,23 @@ function Panel({ id, image, className = "", children, activeSection, onNavigate,
       id={id}
       aria-labelledby={`${id}-title`}
       style={{ "--panel-image": `url("${image}")` }}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-      onTouchCancel={() => { touchStartRef.current = null; }}
     >
-      <div className="panel-photo" aria-hidden="true" />
-      <div className="panel-shade" aria-hidden="true" />
+      <div className="panel-backdrop" aria-hidden="true">
+        <div className="panel-photo" />
+        <div className="panel-shade" />
+      </div>
       {children}
+      {canExplore && activeSection === id && (
+        <button
+          className="explore-more-button mobile-explore-more-button"
+          type="button"
+          aria-label={`Explore more about ${detailTopics[id].label.toLowerCase()}`}
+          onClick={() => onOpenDetail(id)}
+        >
+          <span>Explore more</span>
+          <FiChevronUp aria-hidden="true" />
+        </button>
+      )}
       <PanelNav activeSection={activeSection} onNavigate={onNavigate} />
     </section>
   );

@@ -58,8 +58,9 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--paper-light); o
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
-.panel-photo { position: absolute; z-index: -2; inset: 0; background: var(--stone) var(--panel-image) center / cover no-repeat; transform: scale(1.015); }
-.panel-shade { position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgb(45 39 33 / 84%), rgb(57 48 40 / 61%) 60%, rgb(43 40 36 / 55%)); }
+.panel-backdrop { position: absolute; z-index: -1; inset: 0; }
+.panel-photo { position: absolute; inset: 0; background: var(--stone) var(--panel-image) center / cover no-repeat; transform: scale(1.015); }
+.panel-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(45 39 33 / 84%), rgb(57 48 40 / 61%) 60%, rgb(43 40 36 / 55%)); }
 .skip-link { position: fixed; z-index: 40; top: 12px; left: 12px; padding: 10px 14px; transform: translateY(-160%); border-radius: 6px; background: var(--paper); color: var(--ink); }
 .skip-link:focus { transform: translateY(0); }
 
@@ -792,13 +793,28 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--paper-light); o
   .detail-photo-grid { display: none; }
 }
 
+.mobile-explore-more-button { display: none; }
+
 @media (max-width: 760px) {
-  .scroll-container { touch-action: pan-x; overscroll-behavior-y: none; }
-  .scroll-container > .panel { overflow-y: hidden; overscroll-behavior-y: none; touch-action: pan-x; }
-  .explore-more-button {
-    bottom: calc(71px + env(safe-area-inset-bottom, 0px));
-    left: 50%;
-    transform: translateX(-50%);
+  .scroll-container { overscroll-behavior-y: none; }
+  .scroll-container > .panel { overflow-y: auto; overscroll-behavior-y: contain; }
+  .panel-backdrop {
+    position: sticky;
+    inset: auto;
+    top: 0;
+    width: 100%;
+    height: 100dvh;
+    margin-bottom: -100dvh;
+  }
+  .explore-more-button:not(.mobile-explore-more-button) { display: none; }
+  .mobile-explore-more-button {
+    display: flex;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    width: max-content;
+    margin: 24px auto calc(110px + env(safe-area-inset-bottom, 0px));
+    transform: none;
   }
 }
 
@@ -811,6 +827,12 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--paper-light); o
     padding-right: clamp(16px, 5.8vw, 22px);
     padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px));
     padding-left: clamp(16px, 5.8vw, 22px);
+  }
+  .web-panel .skills-inner,
+  .game-panel .game-inner,
+  .photo-gallery-panel .gallery-inner,
+  .writing-panel .writing-inner {
+    padding-bottom: 28px;
   }
 }
 
